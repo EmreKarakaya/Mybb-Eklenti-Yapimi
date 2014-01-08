@@ -1,0 +1,65 @@
+Merhaba Arkadaşlar
+
+Bügün size nasıl mybb eklenti yazılır dersimin ilk videosu olan bu videoyu çekmekteyim.Şimdi arkadaşlar başlamadan önce belirtmek üzereyim ki klavyeye şu an tam alışamadım.Bu yüzden bazı yazım hataları yapabilirim
+şİMDİDEN özür dilerim..
+
+Şimdi başlıyalım arkadaşlar...
+
+Öncelikle genel bilgileri vermek istiyorum
+
+Mybb eklenti dosyalarını inc / plugins klasöründe barındırmaktadır.Bu dosyalar php dosya uzantısına sahip olmakla beraber <?php ile başlıyıp ?> ile bitmektedirler.
+
+Şimdi arkadaşlar örnek bir mybb eklenti dosyası açalım...
+
+Gördüğünüz üzere dosya php ve <?php ile ?> tagları arasında başlamıştır.
+
+Şimdi kodları inceleyelim.Size göstermek istediğim ilk önemli kod if(!defined("IN_MYBB"))
+{
+    die("Mybb !!!!!");
+} kodudur.Bu kodda bazı lamerlerin eklenti dosyanıza mybb kullanmadan ulaşmaya çalıştıklarında yazdıralacak hatayı belirtir.Ben burada mybb yazdırmayı seçtim siz farklı şeyler yazabilirsiniz.
+
+Örnek gösterirsek
+
+Şimdi burası admin paneli dosyaya direk ulaşalım...
+
+Gördüğünüz üzere Mybb !!!!! yazmakta... Farklı kodlar yazabilir bu bölüm içinde html kullanabilirsiniz.Tek dikkat etmeniz bu bölüm içinde html kodlarındaki tırnak işaretlerini " şeklinde değil \" şeklinde kullanmanız gerekmektedir.
+
+Şimdi  diğer bölüme geçelim
+
+function github_info() bu bölümde eklentimizin bilgilerini veya künyesini giriyoruz.Burada dikkat çekmeniz istediğim bir nokta var.Burada gördüğünüz üzere kod github_info olarak geçmekte.Siz kendi eklentinize göre bunu editleyebilirsiniz.
+
+Örnek olarak
+
+emre_info olarak yazılabilir...
+
+Şimdi içindeki kodlara bakalım
+
+"name"          => "Mybb Github Mykod", bölümü eklentimizin başlığını ve adını belirtir.Bu bölüm fazla dikkat çektiği için bu bölüme dikkat etmeniz gerekir.
+
+"description"   => "Kodlama Konusunda Olan Mybb Forumlara Github Mykodunu Ekler", bu bölüm eklentinizin açıklamasını belirtir.Bu bölümde eklenti ne işe yarıyor ne iş yapıyor gibi açıklamalar yazabilirsiniz.
+
+"website"       => "http://www.emrekarakaya.com.tr", bu bölüm uygulamanın web sitesini belirtir.
+
+"author"        => "Emre Karakaya", bu bölüm eklenti yazarını belirtir.
+
+"authorsite"    => "http://www.emrekarakaya.com.tr", bu bölüm eklenti yazarının websitesini belirtir.
+
+"version"       => "1.0", BU BÖlüm eklentinizin sürümünü belirtir.Şu an benimki 1.0 sürümünde....
+
+"compatibility" => "14*,16*" eklentinizin çalışabileceği mybb versiyonlarını belirtir.Burada 14* mybb 1.4 16* mybb 1.6 dır.
+
+Şimdi tanıtım bölümü bitti.Bakalım tanıtım nasıl gözüküyor...
+
+Gördüğünüz üzere girdiğiniz bilgiler hatasız bir şekilde gözükmekte.Şimdi diğer bölümlere geçelim.
+
+function github_activate() bu bölümde eklentinizin aktifleştirildiğinde hangi kodlarının çalışmasını belirteceksiniz.Yani eklentinizin çalıştığında şablon mu eklenecek.Bu kodları buraua yazabilirsiniz.İlerleyen zamanlarımızda bunu anlatabileceğiz.
+
+global $db, $mybb; burada eklentinizin çalışmaya başlıyacadağında hangi mybb özelliklerini istediği belirteceksiniz.Ben şu an sadece $db özelliğini istedim ilerleyen zamanlarda çeşitlendireceğiz...
+
+function github_deactivate() bölümü eklentinizin pasif veya kaldırıldığında hangi kodlarının çalışacağını belirtir.Burada çoğunlukla activate bölümünde eklenen özelliklerin kaldırılması için kod ekleyeceğiz.
+
+Gördüğünüz üzere eklenti dosyamızın sonuna geldik.Şimdi bakalım eklenti çalışacak mı?
+
+Gördüğünüz üzere eklenti sorunsuz bir şekilde çalışmakta.Burada kullandığım dosyaları çeşitli paylaşım ağları üzerinden indirmeye açık hale getireceğim.Böylece sizde daha iyi anlayabileceksiniz.
+
+Herhangi bir sorunuz olduğu zaman www.emrekarakaya.com.tr adresimden sorabilirsiniz.Hayırlı günler dilerim...
